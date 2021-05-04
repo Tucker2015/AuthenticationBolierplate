@@ -27,9 +27,7 @@ export default function afterLogin() {
   return (
     <div className="row">
       <div className="col s12 m12">
-        <div className="card-panel horizontal blue ">
-          <h5 className="white-text h1">Your PassKey is : {user.passKey}</h5>
-        </div>
+        <div className="card-panel horizontal blue "></div>
       </div>
       {errorMsg ? <p style={{ color: "teal" }}>{errorMsg}</p> : null}
       <form className="col s12" onSubmit={handleSubmit}>
