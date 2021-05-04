@@ -6,12 +6,17 @@
   width: 400px;
   background: #fff;
   border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.5);
 }
 
 .center h1 {
   margin-top: 20px;
   text-align: center;
   padding: 0 0 20px 0;
+  text-shadow: var(--text-shadow-light);
+  font-weight: 700;
+  letter-spacing: 1px;
   border-bottom: 1px solid silver;
 }
 
@@ -29,6 +34,7 @@ form .textField {
 .textField input {
   width: 100%;
   padding: 0 5px;
+  font-size: 14px;
   height: 40px;
   border: none;
   background: none;
@@ -56,7 +62,7 @@ form .textField {
 }
 .textField input:focus ~ label,
 .textField input:valid ~ label {
-  top: -5px;
+  top: -10px;
   color: #2691d9;
 }
 .textField input:focus ~ span::before,

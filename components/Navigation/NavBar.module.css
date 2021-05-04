@@ -44,7 +44,7 @@
 }
 @media (max-width: 990px) {
   .NavBar .logo {
-    font-size: var(--fontsize-m);
+    font-size: var(--fontsize-sm);
   }
   .NavBar .Navigation {
     display: none;

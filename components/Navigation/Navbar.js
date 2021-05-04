@@ -7,7 +7,7 @@ const NavBar = () => {
     return (
 
         <div className={classes.NavBar}>
-            <div className={classes.logo}>MixShare Live PPV Events</div>
+            <div className={classes.logo}>Live PPV Events</div>
             <MobileNavigation />
             <Navigation />
         </div>

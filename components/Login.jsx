@@ -67,7 +67,7 @@ export default function Login() {
             <div className="col s12" style={{ marginBottom: "2rem" }}>
               <p className="left">
                 <label>
-                  <input type="checkbox" className="filled-in" />
+                  <input type="checkbox" />
                   <span> Remember me</span>
                 </label>
               </p>

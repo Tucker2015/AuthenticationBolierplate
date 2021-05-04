@@ -25,7 +25,7 @@ export default function Test() {
             </div> : null}
             {!user ? (<>
                 <h1> You are not logged in</h1>
-            </>) : (<h1>Logged In</h1>)}
+            </>) : (<h3>Welcome back {user.name}</h3>)}
 
             <div className="card-action">
                 {!user ? (
@@ -37,17 +37,9 @@ export default function Test() {
                         </div>
                     </>
                 ) : (
-                    <>
+                    <div className="">
 
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                            <Link href="/user/[userId]" as={`/user/${user._id}`}>
-                                <a className="waves-effect waves-light btn blue">Profile</a>
-                            </Link>
-                            <a role="button" onClick={handleLogout} className="waves-effect waves-light btn blue">Logout</a>
-                        </div>
-                        <h1>Hello {user.name}</h1>
-                    </>
+                    </div>
                 )}
             </div>
         </div>
