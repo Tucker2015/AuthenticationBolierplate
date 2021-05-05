@@ -41,7 +41,7 @@ export default function Login() {
       <div className={styles.container}>
         {loading ? (
           <div className="progress" style={{ margin: 0 }}>
-            <div className="indeterminate"></div>
+            <div className="indeterminate">Loading, Please Wait</div>
           </div>
         ) : null}
 
