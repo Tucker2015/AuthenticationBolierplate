@@ -22,14 +22,14 @@ export default function UserPage({ user }) {
             <div className="card horizontal z-depth-5 large">
                 <div
                     className="card-image hide-on-small-only"
-                    style={{background:'#8de'}}
-                    >   
+                    style={{ background: '#8de' }}
+                >
                     <img
                         src={profilePicture}
                         width="200"
                         height="200"
                         alt={name}
-                        style={{padding:'2rem',borderRadius:'50%',borderBottom:'2px solid #29f'}}
+                        style={{ padding: '2rem', borderRadius: '50%', borderBottom: '2px solid #29f' }}
                     />
                 </div>
                 <div className="card-stacked center-align">
@@ -37,21 +37,21 @@ export default function UserPage({ user }) {
                         <div>
                             <section>
                                 <div className="hide-on-med-and-up">
-                                    <img src={profilePicture} className="circle" width="150" style={{border:'5px solid #29f'}}/>
-                                </div>    
-                                    <h2>{name}</h2>
+                                    <img src={profilePicture} className="circle" width="150" style={{ border: '5px solid #29f' }} />
+                                </div>
+                                <h2>{name}</h2>
                                 <div className="col s12 m12">
-                                    <div className="card-panel blue left-align white-text" style={{fontSize:'1rem'}}>
-                                    
-                                    <p><strong>Bio :</strong> {bio}</p>
-                                    
-                                    <p>
-                                    <strong>Email :</strong>  {email}
-                                    </p>
-                        
+                                    <div className="card-panel blue left-align white-text" style={{ fontSize: '1rem' }}>
+
+                                        <p><strong>Bio :</strong> {bio}</p>
+
+                                        <p>
+                                            <strong>Email :</strong>  {email}
+                                        </p>
+
                                     </div>
                                 </div>
-                                
+
 
                             </section>
                         </div>
@@ -69,7 +69,7 @@ export default function UserPage({ user }) {
     );
 }
 export async function getServerSideProps(context) {
-    await middleware.apply(context.req, context.res);
+    await middleware.run(context.req, context.res);
     const user = await getUser(context.req, context.params.userId);
     if (!user) context.res.statusCode = 404;
     return {

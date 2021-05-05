@@ -39,12 +39,6 @@ export default function Login() {
   return (
     <>
       <div className={styles.container}>
-        {loading ? (
-          <div className="progress" style={{ margin: 0 }}>
-            <div className="indeterminate">Loading, Please Wait</div>
-          </div>
-        ) : null}
-
         <div className={styles.center}>
           <h1>Login</h1>
           <form onSubmit={onSubmit}>
