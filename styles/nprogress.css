@@ -50,6 +50,14 @@
   animation: load6 1.7s infinite ease, round 1.7s infinite ease;
 }
 
+@media screen and (max-width: 600px) {
+  #nprogress .spinner {
+    position: absolute;
+    bottom: 10px;
+    right: 10%;
+    font-size: 30px;
+  }
+}
 .nprogress-custom-parent {
   overflow: hidden;
   position: relative;

@@ -1,0 +1,50 @@
+.container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.profileBx {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  border-radius: 31px;
+  background: linear-gradient(315deg, hsl(300, 0%, 62%), hsl(300, 0%, 31%));
+  box-shadow: -7px -7px 14px hsl(300, 1%, 50%), 7px 7px 14px hsl(300, 0%, 63%);
+}
+.profileBx form {
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+form .textField {
+  position: relative;
+  border-bottom: 2px solid #adadadaa;
+  margin: 30px 0;
+}
+
+.textField label {
+  position: relative;
+  color: #fff;
+  padding: 5px;
+  transition: 0.5s;
+}
+.textField input {
+  width: 100%;
+  padding: 0 5px;
+  font-size: 14px;
+  height: 40px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.textField textarea {
+  width: 100%;
+  padding: 0 5px;
+  font-size: 14px;
+  height: 40px;
+  border: none;
+  background: none;
+  outline: none;
+}

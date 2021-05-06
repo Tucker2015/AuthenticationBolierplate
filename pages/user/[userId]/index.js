@@ -19,50 +19,31 @@ export default function UserPage({ user }) {
             <Head>
                 <title>{name}</title>
             </Head>
-            <div className="card horizontal z-depth-5 large">
-                <div
-                    className="card-image hide-on-small-only"
-                    style={{ background: '#8de' }}
-                >
-                    <img
-                        src={profilePicture}
-                        width="200"
-                        height="200"
-                        alt={name}
-                        style={{ padding: '2rem', borderRadius: '50%', borderBottom: '2px solid #29f' }}
-                    />
-                </div>
-                <div className="card-stacked center-align">
-                    <div className="card-content">
-                        <div>
-                            <section>
-                                <div className="hide-on-med-and-up">
-                                    <img src={profilePicture} className="circle" width="150" style={{ border: '5px solid #29f' }} />
-                                </div>
-                                <h2>{name}</h2>
-                                <div className="col s12 m12">
-                                    <div className="card-panel blue left-align white-text" style={{ fontSize: '1rem' }}>
 
-                                        <p><strong>Bio :</strong> {bio}</p>
+            <div className="container">
 
-                                        <p>
-                                            <strong>Email :</strong>  {email}
-                                        </p>
-
-                                    </div>
-                                </div>
-
-
-                            </section>
+                <div>
+                    <img src={profilePicture} className="circle" width="200" height="200" style={{ padding: '2rem', borderRadius: '50%', borderBottom: '3px solid #0ee80e' }} />
+                    <h2 style={{ fontSize: '2rem', color: '#fff' }}>{name}</h2>
+                    <div className="">
+                        <div style={{ fontSize: '1rem', color: '#fff' }}>
+                            <p><strong>Bio :</strong> {bio}</p>
+                            <p>
+                                <strong>Email :</strong>  {email}
+                            </p>
                         </div>
                     </div>
-                    <div className="card-action">
-                        {isCurrentUser && (
-                            <Link href="/setting">
-                                <a className="waves-effect waves-light btn-small blue">Edit</a>
-                            </Link>
-                        )}
-                    </div>
+
+
+
+                </div>
+
+                <div className="card-action">
+                    {isCurrentUser && (
+                        <Link href="/setting">
+                            <a className="waves-effect waves-light btn-small blue">Edit</a>
+                        </Link>
+                    )}
                 </div>
             </div>
         </>

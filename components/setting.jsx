@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import { useCurrentUser } from "../lib/hooks";
+import styles from "../styles/Setting.module.css";
 
 const ProfileSection = () => {
   const [user, { mutate }] = useCurrentUser();
@@ -78,85 +79,91 @@ const ProfileSection = () => {
           <div className="indeterminate">Loading, Please Wait</div>
         </div>
       ) : null}
-
-      <section className="">
-        <h2>Edit Profile</h2>
-        {msg.message ? (
-          <p
-            style={{
-              color: msg.isError ? "red" : "#0070f3",
-              textAlign: "center",
-            }}
-          >
-            {msg.message}
-          </p>
-        ) : null}
-        <form onSubmit={handleSubmit} className="col s12">
-          <div className="divider"></div>
-          <label htmlFor="name" className="input-field col s6">
-            Name
-            <input
-              required
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Your name"
-              ref={nameRef}
-            />
-          </label>
-          <label htmlFor="bio" className="input-field col s6">
-            Bio
-            <textarea
-              id="bio"
-              name="bio"
-              type="text"
-              placeholder="Bio"
-              ref={bioRef}
-              className="materialize-textarea"
-            />
-          </label>
-          <label htmlFor="avatar">
-            <span>Profile picture &nbsp; </span>
-            <div className="btn-small file-field input-field blue">
-              <span>Choose file</span>
+      <h2>Edit Profile</h2>
+      {msg.message ? (
+        <p
+          style={{
+            color: msg.isError ? "red" : "#0070f3",
+            textAlign: "center",
+          }}
+        >
+          {msg.message}
+        </p>
+      ) : null}
+      <div className={styles.profileBx}>
+        <form onSubmit={handleSubmit} className="">
+          <div className={styles.textField}>
+            <label htmlFor="name">
+              Name
               <input
-                type="file"
-                id="avatar"
-                name="avatar"
-                accept="image/png, image/jpeg"
-                ref={profilePictureRef}
+                required
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                ref={nameRef}
               />
+            </label>
+          </div>
+          <div className={styles.textField}>
+            <label htmlFor="bio">
+              Bio
+              <textarea
+                id="bio"
+                name="bio"
+                type="text"
+                placeholder="Bio"
+                ref={bioRef}
+                required
+                className="materialize-textarea"
+              />
+            </label>
+            <div>
+              <label htmlFor="avatar">
+                <span>Profile picture &nbsp; </span>
+                <div className="btn-small file-field input-field blue">
+                  <span>Choose file</span>
+                  <input
+                    type="file"
+                    id="avatar"
+                    name="avatar"
+                    accept="image/png, image/jpeg"
+                    ref={profilePictureRef}
+                  />
+                </div>
+              </label>
+              <button type="submit" className="btn blue">
+                Save
+              </button>
+              <div>
+                <form onSubmit={handleSubmitPasswordChange}>
+                  <label htmlFor="oldpassword">
+                    Old Password
+                    <input
+                      type="password"
+                      name="oldPassword"
+                      id="oldpassword"
+                      required
+                    />
+                  </label>
+                  <label htmlFor="newpassword">
+                    New Password
+                    <input
+                      type="password"
+                      name="newPassword"
+                      id="newpassword"
+                      required
+                    />
+                  </label>
+                  <button type="submit" className="btn blue">
+                    Change Password
+                  </button>
+                </form>
+              </div>
             </div>
-          </label>
-          <br />
-          <button type="submit" className="btn blue">
-            Save
-          </button>
+          </div>
         </form>
-        <form onSubmit={handleSubmitPasswordChange}>
-          <label htmlFor="oldpassword">
-            Old Password
-            <input
-              type="password"
-              name="oldPassword"
-              id="oldpassword"
-              required
-            />
-          </label>
-          <label htmlFor="newpassword">
-            New Password
-            <input
-              type="password"
-              name="newPassword"
-              id="newpassword"
-              required
-            />
-          </label>
-          <button type="submit" className="btn blue">
-            Change Password
-          </button>
-        </form>
-      </section>
+      </div>
     </>
   );
 };
