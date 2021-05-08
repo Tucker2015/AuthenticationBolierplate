@@ -2,11 +2,17 @@ import React from 'react';
 import Link from 'next/link'
 import { useUser } from "../../lib/hooks";
 import { useState } from "react";
+import { useSnackbar } from "nextjs-toast";
 
 const NavLinks = (props) => {
 
     const [user, { mutate }] = useUser();
     const [loading, isLoading] = useState(false);
+    const snackbar = useSnackbar();
+
+    const handleLogoutToast = () => {
+        snackbar.showMessage("Logged Out", "info", "filled");
+    };
 
     const handleLogout = async () => {
         isLoading(true);
@@ -14,6 +20,7 @@ const NavLinks = (props) => {
             method: "DELETE",
         });
         // set the user state to null
+        handleLogoutToast();
         mutate(null);
         isLoading(false);
     };

@@ -10,7 +10,7 @@ export default function UserPage({ user }) {
 
     if (!user) return <Error statusCode={404} />;
     const {
-        name, email, bio, profilePicture,
+        name, email, passKey, bio, profilePicture
     } = user || {};
     const [currentUser] = useCurrentUser();
     const isCurrentUser = currentUser?._id === user._id;
@@ -22,11 +22,11 @@ export default function UserPage({ user }) {
 
             <div className="container">
 
-                <div>
-                    <img src={profilePicture} className="circle" width="200" height="200" style={{ padding: '2rem', borderRadius: '50%', borderBottom: '3px solid #0ee80e' }} />
-                    <h2 style={{ fontSize: '2rem', color: '#fff' }}>{name}</h2>
+                <div className="profile_Bx">
+                    <img src={profilePicture} className="circle" width="200" height="200" />
+                    <h2 style={{ fontSize: '2rem', color: '#fff', textShadow: '1px 1px 5px #000' }}>{name}</h2>
                     <div className="">
-                        <div style={{ fontSize: '1rem', color: '#fff' }}>
+                        <div style={{ fontSize: '1.2rem', color: '#fff', textShadow: '1px 1px 5px #000' }}>
                             <p><strong>Bio :</strong> {bio}</p>
                             <p>
                                 <strong>Email :</strong>  {email}
@@ -38,10 +38,10 @@ export default function UserPage({ user }) {
 
                 </div>
 
-                <div className="card-action">
+                <div className="user_logged" style={{ margin: 20 }}>
                     {isCurrentUser && (
                         <Link href="/setting">
-                            <a className="waves-effect waves-light btn-small blue">Edit</a>
+                            <a className="edit_button">Edit Profile</a>
                         </Link>
                     )}
                 </div>

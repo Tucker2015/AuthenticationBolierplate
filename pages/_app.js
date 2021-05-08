@@ -4,6 +4,7 @@ import NProgress from 'nprogress';
 import '../styles/nprogress.css';
 import Layout from '../components/Layout';
 import '../styles/global.css'
+import { SnackbarProvider } from "nextjs-toast";
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
@@ -13,9 +14,11 @@ export default function MyApp({ Component, pageProps }) {
 
     return (
         <>
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
+            <SnackbarProvider SnackbarProps={{ autoHideDuration: 3000 }}>
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </SnackbarProvider>
         </>
     );
 }

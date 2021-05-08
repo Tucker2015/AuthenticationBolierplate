@@ -44,6 +44,15 @@ body {
   color: var(--header-color);
   text-shadow: var(--text-shadow-heavy);
 }
+
+.profile_Bx img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  border-radius: 50%;
+  border-bottom: 4px solid #46b517;
+}
 .cookieJar {
   position: absolute;
   left: 50%;
@@ -63,4 +72,16 @@ body {
   text-align: center;
   font-size: 14px;
   align-items: center;
+}
+.edit_button {
+  border: none;
+  text-decoration: none;
+  color: rgb(255, 254, 254);
+  font-size: var(--fontsize-s);
+  width: auto;
+  font-weight: 700;
+  background-color: rgba(22, 211, 22, 1);
+  padding: 10px;
+  border-radius: 10px;
+  text-shadow: var(--text-shadow-light);
 }

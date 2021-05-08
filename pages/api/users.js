@@ -7,7 +7,6 @@ import { extractUser } from '../../lib/api-helpers';
 import { nanoid } from 'nanoid'
 
 const handler = nextConnect();
-const passKey = nanoid(12);
 
 handler.use(middleware); // see how we're reusing our middleware
 
@@ -30,7 +29,7 @@ handler.post(async (req, res) => {
   const hashedPassword = await bcrypt.hash(password, 10);
   const user = await req.db
     .collection('users')
-    .insertOne({ email, password: hashedPassword, name, passKey })
+    .insertOne({ email, password: hashedPassword, name })
     .then(({ ops }) => ops[0]);
   req.logIn(user, (err) => {
     if (err) throw err;

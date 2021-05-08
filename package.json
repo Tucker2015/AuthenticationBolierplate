@@ -1,5 +1,5 @@
 {
-  "name": "learn-starter",
+  "name": "live-ppv",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.58",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.23.0",
     "connect-mongo": "^3.2.0",
@@ -22,6 +23,7 @@
     "next": "9.5.3",
     "next-connect": "^0.9.0",
     "next-session": "^3.3.2",
+    "nextjs-toast": "^1.0.4",
     "nprogress": "^0.2.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",

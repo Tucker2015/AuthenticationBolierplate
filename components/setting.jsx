@@ -132,7 +132,7 @@ const ProfileSection = () => {
                   />
                 </div>
               </label>
-              <button type="submit" className="btn blue">
+              <button type="submit" className="edit_button">
                 Save
               </button>
               <div>

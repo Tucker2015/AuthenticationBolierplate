@@ -9,7 +9,7 @@ export default function Test() {
     const [user, { mutate }] = useUser();
     const [loading, isLoading] = useState(false);
     const {
-        name, email, bio, profilePicture,
+        name, email, bio, profilePicture, passKey
     } = user || {};
     const [currentUser] = useCurrentUser();
 

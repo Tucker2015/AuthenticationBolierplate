@@ -51,7 +51,7 @@ form .textField {
 .textField input {
   width: 100%;
   padding: 0 5px;
-  font-size: 14px;
+  font-size: 17px;
   height: 40px;
   border: none;
   background: none;
@@ -63,7 +63,7 @@ form .textField {
   left: 5px;
   color: #adadad;
   transform: translateY(-50%);
-  font-size: 16px;
+  font-size: 17px;
   pointer-events: none;
   transition: 0.5s;
 }
@@ -125,5 +125,8 @@ form .textField {
   .container h3 {
     font-size: var(--fontsize-header-mobile);
     text-align: center;
+  }
+  .center {
+    width: 95%;
   }
 }

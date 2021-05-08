@@ -3,13 +3,18 @@ import { useRouter } from "next/router";
 import { useUser } from "../lib/hooks";
 import Link from "next/link";
 import styles from "../styles/Auth.module.css";
+import { useSnackbar } from "nextjs-toast";
 
 export default function Login() {
   const router = useRouter();
   const [errorMsg, setErrorMsg] = useState("");
   const [user, { mutate }] = useUser();
   const [loading, isLoading] = useState(false);
+  const snackbar = useSnackbar();
 
+  const handleLogin = () => {
+    snackbar.showMessage("Logged In", "success", "filled");
+  };
   useEffect(() => {
     // redirect to home if user is authenticated
     if (user) router.replace("/test");
@@ -30,6 +35,7 @@ export default function Login() {
     if (res.status === 200) {
       const userObj = await res.json();
       mutate(userObj);
+      handleLogin();
     } else {
       isLoading(false);
       setErrorMsg("Incorrect username or password. Try again!");
@@ -58,6 +64,7 @@ export default function Login() {
               <span></span>
               <label htmlFor="password">Password</label>
             </div>
+
             <div className="col s12" style={{ marginBottom: "2rem" }}>
               <p className="left">
                 <label>
