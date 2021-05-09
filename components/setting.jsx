@@ -80,7 +80,10 @@ const ProfileSection = () => {
       <Head>
         <title>Settings</title>
       </Head>
-      <h2>Edit Profile</h2>
+      <div className={styles.header}>
+        <h1>Edit Profile</h1>
+      </div>
+
       {msg.message ? (
         <p
           style={{
@@ -119,54 +122,49 @@ const ProfileSection = () => {
                 className="materialize-textarea"
               />
             </label>
-            <div>
-              <label htmlFor="avatar">
-                <span>Profile picture &nbsp; </span>
-                <img src={user.profilePicture} height="50" width="50" />
-                <div className="btn-small file-field input-field blue">
-                  <span>Choose file</span>
-                  <input
-                    type="file"
-                    id="avatar"
-                    name="avatar"
-                    accept="image/png, image/jpeg"
-                    ref={profilePictureRef}
-                  />
-                </div>
-              </label>
-              <button type="submit" className="edit_button">
-                Save
-              </button>
-
-              <form onSubmit={handleSubmitPasswordChange}>
-                <div className={styles.textField}>
-                  <label htmlFor="oldpassword">
-                    Old Password
-                    <input
-                      type="password"
-                      name="oldPassword"
-                      id="oldpassword"
-                      required
-                    />
-                  </label>
-                </div>
-                <div className={styles.textField}>
-                  <label htmlFor="newpassword">
-                    New Password
-                    <input
-                      type="password"
-                      name="newPassword"
-                      id="newpassword"
-                      required
-                    />
-                  </label>
-                </div>
-                <button type="submit" className="btn blue">
-                  Change Password
-                </button>
-              </form>
-            </div>
           </div>
+          <div className={styles.textField} style={{ border: "none" }}>
+            <label htmlFor="avatar">Profile Picture</label>
+            <div className="btn-small file-field input-field blue">
+              <input
+                type="file"
+                id="avatar"
+                name="avatar"
+                accept="image/png, image/jpeg"
+                ref={profilePictureRef}
+              />
+            </div>
+            <button type="submit" className="edit_button">
+              Save
+            </button>
+          </div>
+        </form>
+        <form onSubmit={handleSubmitPasswordChange}>
+          <div className={styles.textField}>
+            <label htmlFor="oldpassword">
+              Old Password
+              <input
+                type="password"
+                name="oldPassword"
+                id="oldpassword"
+                required
+              />
+            </label>
+          </div>
+          <div className={styles.textField}>
+            <label htmlFor="newpassword">
+              New Password
+              <input
+                type="password"
+                name="newPassword"
+                id="newpassword"
+                required
+              />
+            </label>
+          </div>
+          <button type="submit" className="btn blue">
+            Change Password
+          </button>
         </form>
       </div>
     </>

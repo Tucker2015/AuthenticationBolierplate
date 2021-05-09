@@ -73,9 +73,21 @@ export default function Login() {
                 </label>
               </p>
             </div>
-            <button className={styles.btn} type="submit">
+            <button
+              className={styles.btn}
+              type="submit"
+              style={{ marginBottom: "1rem" }}
+            >
               Login
             </button>
+            <div
+              className="col s12"
+              style={{ marginBottom: "2rem", color: "#fff" }}
+            >
+              <p>
+                Don't have an account ?<Link href="/signup"> Sign Up here</Link>
+              </p>
+            </div>
           </form>
         </div>
       </div>

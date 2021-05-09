@@ -102,10 +102,12 @@ export default function Login() {
                 Sign Up
               </button>
             </div>
-            <div className="col s12" style={{ marginBottom: "2rem" }}>
+            <div
+              className="col s12"
+              style={{ marginBottom: "2rem", color: "#fff" }}
+            >
               <p>
-                Already have an account
-                <Link href="/login"> Login here.</Link>
+                Already have an account ?<Link href="/login"> Login here.</Link>
               </p>
             </div>
           </form>

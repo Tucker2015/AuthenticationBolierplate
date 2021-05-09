@@ -3,7 +3,11 @@
   margin: 0;
   padding: 0;
 }
-
+.header {
+  text-align: center;
+  color: var(--header-color);
+  text-shadow: var(--text-shadow-heavy);
+}
 .profileBx {
   position: absolute;
   top: 50%;
@@ -11,9 +15,51 @@
   transform: translate(-50%, -50%);
   width: 400px;
   border-radius: 31px;
-  background: linear-gradient(315deg, hsl(300, 0%, 62%), hsl(300, 0%, 31%));
-  box-shadow: -7px -7px 14px hsl(300, 1%, 50%), 7px 7px 14px hsl(300, 0%, 63%);
+  backdrop-filter: blur(10px);
+  background: var(--glassbox);
+  box-shadow: -7px -7px 14px hsl(0, 0%, 10%), 7px 7px 14px hsl(0, 0%, 20%);
 }
+.profileBx img {
+  position: relative;
+  height: 80px;
+  width: 80px;
+  border-radius: 20px;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profileBx button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+.edit_button {
+  border: none;
+  text-decoration: none;
+  color: rgb(255, 254, 254);
+  font-size: var(--fontsize-s);
+  width: auto;
+  font-weight: 700;
+  background-color: rgba(22, 211, 22, 1);
+  padding: 10px;
+  border-radius: 10px;
+  text-shadow: var(--text-shadow-light);
+}
+.password_button {
+  border: none;
+  text-decoration: none;
+  color: rgb(255, 254, 254);
+  font-size: var(--fontsize-s);
+  width: auto;
+  font-weight: 700;
+  background-color: rgb(22, 82, 211);
+  padding: 10px;
+  border-radius: 10px;
+  text-shadow: var(--text-shadow-light);
+}
+
 .profileBx form {
   padding: 0 40px;
   box-sizing: border-box;

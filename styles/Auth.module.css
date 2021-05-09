@@ -22,12 +22,8 @@
   width: 400px;
   border-radius: 31px;
   backdrop-filter: blur(10px);
-  background: linear-gradient(
-    315deg,
-    rgba(158, 158, 158, 0.242),
-    rgba(79, 79, 79, 0.975)
-  );
-  box-shadow: -7px -7px 14px hsl(300, 1%, 50%), 7px 7px 14px hsl(300, 0%, 63%);
+  background: var(--glassbox);
+  box-shadow: -7px -7px 14px hsl(0, 0%, 10%), 7px 7px 14px hsl(0, 0%, 20%);
 }
 
 .center h1 {
@@ -132,6 +128,6 @@ form .textField {
     text-align: center;
   }
   .center {
-    width: 95%;
+    width: 90%;
   }
 }
