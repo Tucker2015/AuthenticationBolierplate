@@ -33,6 +33,8 @@
     "react-icons": "^3.11.0",
     "sass": "^1.29.0",
     "swr": "^0.3.5",
-    "validator": "^13.1.17"
+    "validator": "^13.1.17",
+    "video.js": "^7.11.8",
+    "videojs-youtube": "^2.6.1"
   }
 }

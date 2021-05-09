@@ -53,6 +53,11 @@ const NavLinks = (props) => {
                         </Link>
                     </li>
                     <li onClick={() => props.isMobile && props.closeMobileMenu()}>
+                        <Link href="/live">
+                            <a>Live PPV</a>
+                        </Link>
+                    </li>
+                    <li onClick={() => props.isMobile && props.closeMobileMenu()}>
                         <Link href="/user/[userId]" as={`/user/${user._id}`}>
                             <a>Profile</a>
                         </Link>

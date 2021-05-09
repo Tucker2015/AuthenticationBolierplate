@@ -7,7 +7,10 @@
   padding: 10px;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
   z-index: 999;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
 }
 .NavBar .logo {
   font-size: var(--fontsize-l);
@@ -16,6 +19,7 @@
   font-weight: 900;
   letter-spacing: 1px;
   cursor: pointer;
+  margin-left: 10px;
 }
 .NavBar nav ul {
   list-style: none;

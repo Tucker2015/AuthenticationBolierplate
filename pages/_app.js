@@ -4,6 +4,7 @@ import NProgress from 'nprogress';
 import '../styles/nprogress.css';
 import Layout from '../components/Layout';
 import '../styles/global.css'
+import 'video.js/dist/video-js.css'
 import { SnackbarProvider } from "nextjs-toast";
 
 Router.events.on('routeChangeStart', () => NProgress.start());

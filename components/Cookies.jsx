@@ -6,6 +6,8 @@ export default function Cookies() {
       <CookieConsent
         enableDeclineButton
         buttonText="I Accept"
+        declineButtonText="I Decline"
+        onDecline=""
         cookieName="myAwesomeCookieName2"
         disableStyles={true}
         expires={150}
@@ -17,7 +19,10 @@ export default function Cookies() {
           alert("nay!");
         }}
       >
-        This website uses cookies to enhance the user experience.
+        <div className="cookieText">
+          <h4>This website uses cookies to enhance the user experience. </h4>
+          <p>Please Accept if you are ok with this.</p>
+        </div>
       </CookieConsent>
     </>
   );

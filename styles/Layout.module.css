@@ -5,6 +5,14 @@
   padding: 0 50px;
   align-items: center;
 }
+.main h1 {
+  color: var(--header-color);
+  font-size: var(--fontsize-l);
+  font-weight: 900;
+  text-shadow: var(--text-shadow-heavy);
+  text-align: center;
+}
+
 .bannerHeader {
   display: flex;
   font-size: var(--font-sz-m);

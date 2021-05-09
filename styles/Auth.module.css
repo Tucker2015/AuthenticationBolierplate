@@ -10,7 +10,7 @@
   color: var(--header-color);
 }
 .container h3 {
-  font-size: var(--fontsize-header-mobile);
+  font-size: var(--fontsize-m);
   text-shadow: var(--text-shadow-heavy);
   color: var(--header-color);
 }
@@ -21,7 +21,12 @@
   transform: translate(-50%, -50%);
   width: 400px;
   border-radius: 31px;
-  background: linear-gradient(315deg, hsl(300, 0%, 62%), hsl(300, 0%, 31%));
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
+    315deg,
+    rgba(158, 158, 158, 0.242),
+    rgba(79, 79, 79, 0.975)
+  );
   box-shadow: -7px -7px 14px hsl(300, 1%, 50%), 7px 7px 14px hsl(300, 0%, 63%);
 }
 
