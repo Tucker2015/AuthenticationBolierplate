@@ -16,7 +16,7 @@ export default function Home() {
           Coming soon we have a Live PPV event from Spartan BKB Fight Club
         </h3>
         <img src="/spartan_logo1.png" alt="Spartan Logo" />
-        <p>Sign up now to receive your unique login password.</p>
+        <p>Sign up now to receive your unique Pass Key for the Live Event.</p>
         <a style={{ backgroundColor: "#0aa44f" }} href="/signup">
           Sign Up
         </a>

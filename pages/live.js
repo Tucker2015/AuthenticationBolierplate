@@ -13,7 +13,7 @@ export default function Test() {
         name, email, bio, profilePicture, passKey
     } = user || {};
     const [currentUser] = useCurrentUser();
-
+    const [visible, setVisible] = useState(true);
     //user to enter passKey from db to see if they are a live streamer
     const [passKeyInput, setPassKeyInput] = useState('');
 
@@ -23,20 +23,13 @@ export default function Test() {
         if (passKeyInput === passKey) {
             mutate(user);
             isLoading(false);
+            setVisible(false);
             return;
         } else if (!passKeyInput !== passKey) {
             isLoading(false);
             return alert('Please enter a valid passkey');
         }
         isLoading(false);
-    }
-
-    const noPassKey = () => {
-        return (
-            <div>
-                <h1>You are not a live streamer</h1>
-            </div>
-        )
     }
 
     return (
@@ -59,10 +52,15 @@ export default function Test() {
                     </>
                 ) : (
                     <>
-                        <div style={{ display: 'flex', justifyContent: 'center' }}>
-                            <input type="text" placeholder="Enter passkey" value={passKeyInput} onChange={(e) => setPassKeyInput(e.target.value)} />
-                            <button className={styles.btn_login} onClick={handleSubmit}>Submit</button>
-                        </div>
+                        {visible ? (
+                            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                <input type="text" placeholder="Enter passkey" value={passKeyInput} onChange={(e) => setPassKeyInput(e.target.value)} />
+                                <button className={styles.btn_login} onClick={handleSubmit}>Submit</button>
+                            </div>
+                        ) :
+                            (
+                                null
+                            )}
                         {passKeyInput === passKey ? <LiveVideo /> : null}
                     </>
                 )}

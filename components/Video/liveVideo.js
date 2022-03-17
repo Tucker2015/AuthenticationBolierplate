@@ -10,7 +10,7 @@ const videoJsOptions = {
   fill: true,
   playsinline: true,
   responsive: true,
-  controls: false,
+  controls: true,
   breakpoints: {
     medium: 500,
     large: 1100
