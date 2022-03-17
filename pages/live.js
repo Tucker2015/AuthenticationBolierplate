@@ -14,6 +14,31 @@ export default function Test() {
     } = user || {};
     const [currentUser] = useCurrentUser();
 
+    //user to enter passKey from db to see if they are a live streamer
+    const [passKeyInput, setPassKeyInput] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        isLoading(true);
+        if (passKeyInput === passKey) {
+            mutate(user);
+            isLoading(false);
+            return;
+        } else if (!passKeyInput !== passKey) {
+            isLoading(false);
+            return alert('Please enter a valid passkey');
+        }
+        isLoading(false);
+    }
+
+    const noPassKey = () => {
+        return (
+            <div>
+                <h1>You are not a live streamer</h1>
+            </div>
+        )
+    }
+
     return (
         <div className={styles.container}>
             {loading ? <div className="progress white" style={{ margin: 0 }}>
@@ -33,7 +58,13 @@ export default function Test() {
                         </div>
                     </>
                 ) : (
-                    <LiveVideo />
+                    <>
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <input type="text" placeholder="Enter passkey" value={passKeyInput} onChange={(e) => setPassKeyInput(e.target.value)} />
+                            <button className={styles.btn_login} onClick={handleSubmit}>Submit</button>
+                        </div>
+                        {passKeyInput === passKey ? <LiveVideo /> : null}
+                    </>
                 )}
             </>
         </div>
