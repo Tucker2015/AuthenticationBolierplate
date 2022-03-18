@@ -35,7 +35,9 @@ export default function Test() {
     }
 
     return (
-        <div className={styles.container}>
+        <div
+            onContextMenu={e => e.preventDefault()}
+            className={styles.container}>
             {loading ? <div className="progress white" style={{ margin: 0 }}>
                 <div className="indeterminate blue">Loading.......</div>
             </div> : null}
