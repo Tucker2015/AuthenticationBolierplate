@@ -10,12 +10,14 @@ export default function Test() {
     const [user, { mutate }] = useUser();
     const [loading, isLoading] = useState(false);
     const {
-        name, email, bio, profilePicture, passKey
+        name, email, bio, profilePicture, passKey, keyInUse
     } = user || {};
     const [currentUser] = useCurrentUser();
     const [visible, setVisible] = useState(true);
     //user to enter passKey from db to see if they are a live streamer
     const [passKeyInput, setPassKeyInput] = useState('');
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();

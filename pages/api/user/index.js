@@ -40,7 +40,7 @@ handler.patch(upload.single('profilePicture'), async (req, res) => {
         profilePicture = image.secure_url;
     }
 
-    const { name, bio } = req.body;
+    const { name, bio, keyInUse } = req.body;
 
     await req.db.collection('users').updateOne(
         { _id: req.user._id },
@@ -48,6 +48,7 @@ handler.patch(upload.single('profilePicture'), async (req, res) => {
             $set: {
                 name: name,
                 bio: bio,
+                keyInUse: keyInUse,
                 ...(profilePicture && { profilePicture })
             },
         },

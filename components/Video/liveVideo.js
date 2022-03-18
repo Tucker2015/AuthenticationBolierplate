@@ -24,8 +24,8 @@ const videoJsOptions = {
   },
   sources: [
     {
-      src: "https://www.youtube.com/watch?v=uPXq0Smbjf4",
-      type: "video/youtube",
+      src: "http://135.181.101.168:8000/live/SPARTAN/index.m3u8",
+      type: "application/x-mpegURL",
     },
   ],
 };

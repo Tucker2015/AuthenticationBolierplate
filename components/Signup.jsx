@@ -29,6 +29,7 @@ export default function Login() {
         email: e.currentTarget.email.value,
         name: e.currentTarget.name.value,
         password: e.currentTarget.password.value,
+        keyInUse: false,
       };
       const res = await fetch("/api/users", {
         method: "POST",
