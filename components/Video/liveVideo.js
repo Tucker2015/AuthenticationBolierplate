@@ -24,7 +24,7 @@ const videoJsOptions = {
   },
   sources: [
     {
-      src: "http://135.181.101.168:8000/live/SPARTAN/index.m3u8",
+      src: "https://ppv.mixshare.co.uk:8443/live/SPARTAN/index.m3u8",
       type: "application/x-mpegURL",
     },
   ],
