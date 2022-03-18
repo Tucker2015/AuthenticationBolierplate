@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import Videojs from "./Video.jsx";
 import style from "../../styles/VideoPlayer.module.css";
 import youtube from "videojs-youtube";
@@ -31,6 +32,20 @@ const videoJsOptions = {
 };
 
 export default function LiveVideo() {
+
+  const [ipAddress, setIpAddress] = useState("");
+
+  const getIp = async () => {
+    const response = await fetch('https://api.ipify.org?format=json');
+    const data = await response.json();
+    setIpAddress(data.ip);
+    return data.ip;
+  }
+
+  useEffect(() => {
+    getIp();
+  }, []);
+
   return (
     <>
       <head>
@@ -46,6 +61,9 @@ export default function LiveVideo() {
           <Videojs {...videoJsOptions} />
         </div>
       </main>
+      <div>
+        <h3>Your IP Address: {ipAddress}</h3>
+      </div>
     </>
   );
 }

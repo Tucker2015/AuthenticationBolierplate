@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useUser } from '../lib/hooks';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useCurrentUser } from '../lib/hooks';
 import styles from "../styles/Auth.module.css";
 import LiveVideo from '@/components/Video/liveVideo';
@@ -10,26 +10,11 @@ export default function Test() {
     const [user, { mutate }] = useUser();
     const [loading, isLoading] = useState(false);
     const {
-        name, email, bio, profilePicture, passKey, keyInUse
+        passKey,
     } = user || {};
     const [currentUser] = useCurrentUser();
     const [visible, setVisible] = useState(false);
     const [passKeyCode, setPassKeyCode] = useState("");
-
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     isLoading(true);
-    //     if (passKeyInput === passKey) {
-    //         mutate(user);
-    //         isLoading(false);
-    //         setVisible(true);
-    //         return;
-    //     } else if (!passKeyInput !== passKey) {
-    //         isLoading(false);
-    //         return alert('Please enter a valid passkey');
-    //     }
-    //     isLoading(false);
-    // }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -45,7 +30,6 @@ export default function Test() {
         }
         isLoading(false);
     }
-
     return (
         <div
             className={styles.container}>
@@ -54,7 +38,12 @@ export default function Test() {
             </div> : null}
             {!user ? (<>
                 <h1>You are not logged in</h1>
-            </>) : (<h3>Welcome back {user.name}</h3>)}
+            </>) : (
+                <div>
+                    <h3>Welcome back {user.name}</h3>
+                </div>
+
+            )}
 
             <>
                 {!user ? (
