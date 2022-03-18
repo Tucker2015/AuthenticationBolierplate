@@ -31,6 +31,9 @@ export default function UserPage({ user }) {
                             <p>
                                 <strong>Email :</strong>  {email}
                             </p>
+                            <p>
+                                <strong>Passkey :</strong>  {passKey}
+                            </p>
                         </div>
                     </div>
 

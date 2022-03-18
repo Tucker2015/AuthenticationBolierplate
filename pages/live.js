@@ -13,21 +13,33 @@ export default function Test() {
         name, email, bio, profilePicture, passKey, keyInUse
     } = user || {};
     const [currentUser] = useCurrentUser();
-    const [visible, setVisible] = useState(true);
-    //user to enter passKey from db to see if they are a live streamer
-    const [passKeyInput, setPassKeyInput] = useState('');
+    const [visible, setVisible] = useState(false);
+    const [passKeyCode, setPassKeyCode] = useState("");
 
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     isLoading(true);
+    //     if (passKeyInput === passKey) {
+    //         mutate(user);
+    //         isLoading(false);
+    //         setVisible(true);
+    //         return;
+    //     } else if (!passKeyInput !== passKey) {
+    //         isLoading(false);
+    //         return alert('Please enter a valid passkey');
+    //     }
+    //     isLoading(false);
+    // }
 
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault();
         isLoading(true);
-        if (passKeyInput === passKey) {
+        if (passKeyCode === passKey) {
             mutate(user);
             isLoading(false);
-            setVisible(false);
+            setVisible(true);
             return;
-        } else if (!passKeyInput !== passKey) {
+        } else if (!passKeyCode !== passKey) {
             isLoading(false);
             return alert('Please enter a valid passkey');
         }
@@ -36,7 +48,6 @@ export default function Test() {
 
     return (
         <div
-            onContextMenu={e => e.preventDefault()}
             className={styles.container}>
             {loading ? <div className="progress white" style={{ margin: 0 }}>
                 <div className="indeterminate blue">Loading.......</div>
@@ -56,16 +67,34 @@ export default function Test() {
                     </>
                 ) : (
                     <>
-                        {visible ? (
-                            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                <input type="text" placeholder="Enter passkey" value={passKeyInput} onChange={(e) => setPassKeyInput(e.target.value)} />
-                                <button className={styles.btn_login} onClick={handleSubmit}>Submit</button>
+                        {!visible ? (
+                            <div className='container'>
+                                <div>
+                                    <form
+                                        style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: 10 }}
+                                        onSubmit={handleSubmit}>
+                                        <input
+                                            style={{ width: '100%', margin: 10, height: 40, fontSize: 20, padding: 10 }}
+                                            type="text"
+                                            placeholder='Enter Pass Key'
+                                            value={passKeyCode}
+                                            onChange={(e) => setPassKeyCode(e.target.value)}
+                                        />
+                                        <input className={styles.btn_key} type="submit" />
+                                    </form>
+                                </div>
+                                <div
+                                    className='info'
+                                >
+                                    {/* <h3>
+                                        How do I get my passkey?
+                                    </h3> */}
+                                </div>
                             </div>
                         ) :
                             (
-                                null
+                                <LiveVideo />
                             )}
-                        {passKeyInput === passKey ? <LiveVideo /> : null}
                     </>
                 )}
             </>

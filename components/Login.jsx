@@ -17,7 +17,7 @@ export default function Login() {
   };
   useEffect(() => {
     // redirect to home if user is authenticated
-    if (user) router.replace("/test");
+    if (user) router.replace("/live");
   }, [user]);
 
   async function onSubmit(e) {

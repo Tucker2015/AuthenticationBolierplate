@@ -21,7 +21,7 @@ export default class VideoPlayer extends React.Component {
   // see https://github.com/videojs/video.js/pull/3856
   render() {
     return (
-      <div className="container">
+      <div onContextMenu={(e) => e.preventDefault()} className="container">
         <div data-vjs-player>
           <video
             ref={(node) => (this.videoNode = node)}
